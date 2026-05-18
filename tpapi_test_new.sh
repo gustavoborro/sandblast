@@ -67,7 +67,7 @@ echo "Gateway : $GATEWAY"
 echo "File    : $FILE"
 echo
 
-UPLOAD_RESPONSE=$(curl --noproxy "$GATEWAY" -k -sS \
+UPLOAD_RESPONSE=$(curl_cli --noproxy "$GATEWAY" -k -sS \
   -X POST "$UPLOAD_URL" \
   -F "request={\"request\":{\"file_name\":\"$FILENAME\",\"features\":[\"te\"]}};type=application/json" \
   -F "file=@$FILE")
@@ -90,7 +90,7 @@ echo "Polling for result..."
 
 for ((i=1; i<=MAX_ATTEMPTS; i++)); do
 
-  QUERY_RESPONSE=$(curl --noproxy "$GATEWAY" -k -sS \
+  QUERY_RESPONSE=$(curl_cli --noproxy "$GATEWAY" -k -sS \
     -X POST "$QUERY_URL" \
     -H "Content-Type: application/json" \
     -d "{\"request\":{\"sha1\":\"$SHA1\",\"file_name\":\"$FILENAME\",\"features\":[\"te\"]}}")
