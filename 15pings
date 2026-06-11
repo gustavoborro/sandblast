@@ -1,0 +1,6 @@
+winget install --id Microsoft.PowerShell --source winget
+$tasks = 1..15 | ForEach-Object {
+    (New-Object System.Net.NetworkInformation.Ping).SendPingAsync("172.21.1.4")
+}
+[System.Threading.Tasks.Task]::WaitAll($tasks)
+$tasks | ForEach-Object { $_.Result } | Format-Table Status, RoundtripTime, Address
