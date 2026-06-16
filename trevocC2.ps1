@@ -1,7 +1,7 @@
 #
 # TrevorC2 - legitimate looking command and control
 # Written by: Dave Kennedy @HackingDave
-# Website: https://www.trustedsec.com
+# Website: https://www.trustedsec.comdd
 # GIT: https://github.com/trustedsec
 # PowerShell Module by Alex Williams @offsec_ginger
 #
